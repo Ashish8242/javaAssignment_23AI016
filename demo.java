@@ -1,19 +1,29 @@
-package demo;
-import javax.swing.*;
-import com.toedter.calendar.JDateChooser;
+package exception_handeling;
 
 public class demo {
-
-
-
-
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("JDateChooser Test");
-        JDateChooser dateChooser = new JDateChooser();
-        frame.add(dateChooser);
-        frame.setSize(400, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
+  public static void main(String[] args) {
+	  try {
+		  String s = args[0];
+		  int i = Integer.parseInt(s);
+		  int j = i/(i-9);
+		  System.out.println("Value of j" +j);
+		  
+	  }
+	  catch(ArrayIndexOutOfBoundsException ex) {
+		  System.out.println("command line argument is not passed");
+		  
+	  }
+	  catch(NumberFormatException ex) {
+		  System.out.println("string to int conversion");
+	  }
+	  catch(ArithmeticException ex) 
+	   {
+		  System.out.println("Divide by zero");
+	  }
+	  finally {
+		  System.out.println("gsv rocks");
+	  }
+	  System.out.println("Main end");
+  }
+  
 }
