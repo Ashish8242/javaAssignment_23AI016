@@ -4,5 +4,5 @@
 /**
  * 
  */
-module createException {
+module Throws {
 }
